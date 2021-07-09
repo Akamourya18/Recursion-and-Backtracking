@@ -1,18 +1,16 @@
 //Number of subsets of array whose sum is equal to x.
 #include<bits/stdc++.h>
 using namespace std;
-int ans=0;
-void subSum(int a[], int n, int i, int sum, int x)
+int subSum(int a[], int n,int x)
 {
-    if(i==n)
-    {
-        if(sum==x)
-        ans++;
-        return;
-    }
-    
-    subSum(a,n,i+1,sum,x);
-    subSum(a,n,i+1,sum+a[i],x);
+    if(x==0)
+        return 1;
+    if(n==0)
+        return 0;
+    if(a[n-1]>x)
+        return subSum(a,n-1,x);
+    else
+        return subSum(a,n-1,x)+subSum(a,n-1,x-a[n-1]);
 }
 int main()
 {
@@ -22,6 +20,6 @@ int main()
     for(i=0;i<n;i++)
     cin>>a[i];
     cin>>x;
-    subSum(a,n,0,0,x);
-    cout<<ans;
+    cout<<subSum(a,n,x);
+    
 }

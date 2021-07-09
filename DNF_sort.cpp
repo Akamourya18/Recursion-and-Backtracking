@@ -6,7 +6,7 @@ void dnf_sort(int a[],int n)
     int lo=0;
     int mid=0;
     int hi=n-1;
-    while(mid<hi)
+    while(mid<=hi)
     {
         if(a[mid]==0)
         {
