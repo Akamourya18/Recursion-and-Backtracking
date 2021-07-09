@@ -1,19 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
-void bubbleSort(int a[],int i, int n)
+void bubbleSort(int a[], int n)
 {
-    if(i==n-1)
+    if(n==1)
     return;
-    bubbleSort(a,i+1,n);
-    for(int j=i;j<n-1;j++)
+    for(int i=0;i<n-1;i++)
     {
-        if(a[j]>a[j+1])
-        {
-            int temp=a[j];
-            a[j]=a[j+1];
-            a[j+1]=temp;
-        }
+        if(a[i+1]<a[i])
+            swap(a[i],a[i+1]);    
     }
+    bubbleSort(a,n-1);
 }
 int main()
 {
@@ -22,7 +18,7 @@ int main()
     int a[n];
     for(i=0;i<n;i++)
         cin>>a[i];
-    bubbleSort(a,0,n);
+    bubbleSort(a,n);
     for(i=0;i<n;i++)
         cout<<a[i]<<"";
 }

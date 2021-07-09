@@ -6,7 +6,7 @@ void wave_sort(int a[],int n)
     {
         if(a[i]<a[i-1])
         swap(a[i],a[i-1]);
-        if(a[i]<a[i+1])
+        if(a[i]<a[i+1] && i<=n-2)
         swap(a[i],a[i+1]);
     }
 }
