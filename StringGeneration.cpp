@@ -10,10 +10,10 @@ void print(int a[],int i,int n,string ans)
         return;
     }
     
-    print(a,i+1,n-1,arr[a[i]]+ans);
+    print(a,i+1,n-1,ans+arr[a[i]]);
     int temp=(a[i]*10)+a[i+1];
     if(temp<=26)
-    print(a,i+2,n-2,arr[temp]+ans);
+    print(a,i+2,n-2,ans+arr[temp]);
 }
 int main()
 {
